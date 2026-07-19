@@ -1,0 +1,880 @@
+<!DOCTYPE html>
+<html lang="ur" dir="rtl">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>الـنور اسلامک یونیورسٹی | Al-Noor Islamic University</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Inter:wght@400;500;600;700&family=Amiri:wght@400;700&family=Noto+Nastaliq+Urdu:wght@400;600;700&display=swap" rel="stylesheet">
+<script src="https://unpkg.com/lucide@latest"></script>
+<script>
+  tailwind.config = {
+    theme: {
+      extend: {
+        colors: {
+          primary: { DEFAULT: '#0B5D3B', dark: '#073D27', light: '#0E7A4C' },
+          gold: { DEFAULT: '#C8A95B', light: '#E4CE96', dark: '#9C7F3B' },
+          ink: '#222222',
+          mist: '#F8F9FA',
+          parchment: '#FBF7EE',
+        },
+        fontFamily: {
+          display: ['"Cormorant Garamond"', 'serif'],
+          body: ['Inter', 'sans-serif'],
+          arabic: ['Amiri', 'serif'],
+          urdu: ['"Noto Nastaliq Urdu"', 'serif'],
+        },
+        boxShadow: {
+          soft: '0 4px 24px -4px rgba(11,93,59,0.12)',
+          card: '0 8px 30px -8px rgba(11,93,59,0.18)',
+          gold: '0 4px 20px -4px rgba(200,169,91,0.35)',
+        }
+      }
+    }
+  }
+</script>
+<style>
+  html { scroll-behavior: smooth; }
+  body { font-family: 'Inter', sans-serif; color: #222222; }
+  body.lang-ur, body.lang-ur h1, body.lang-ur h2, body.lang-ur h3, body.lang-ur h4, body.lang-ur p, body.lang-ur a, body.lang-ur span, body.lang-ur button, body.lang-ur li { font-family: 'Noto Nastaliq Urdu', serif; }
+  body.lang-ar, body.lang-ar h1, body.lang-ar h2, body.lang-ar h3, body.lang-ar h4, body.lang-ar p, body.lang-ar a, body.lang-ar span, body.lang-ar button, body.lang-ar li { font-family: 'Amiri', serif; }
+  body.lang-en h1, body.lang-en h2, body.lang-en h3, body.lang-en h4 { font-family: 'Cormorant Garamond', serif; }
+  body.lang-en, body.lang-en p, body.lang-en a, body.lang-en span, body.lang-en button, body.lang-en li { font-family: 'Inter', sans-serif; }
+
+  .motif-star {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Cg fill='none' stroke='%23C8A95B' stroke-width='1'%3E%3Cpath d='M50 4 L61 30 L89 24 L70 46 L96 61 L67 63 L74 91 L50 74 L26 91 L33 63 L4 61 L30 46 L11 24 L39 30 Z'/%3E%3C/g%3E%3C/svg%3E");
+    background-repeat: no-repeat; background-position: center; background-size: contain;
+  }
+  .divider-star { position: relative; height: 2px; background: linear-gradient(90deg, transparent, rgba(200,169,91,0.5), transparent); }
+  .divider-star::before {
+    content: ""; position: absolute; left: 50%; top: 50%; width: 22px; height: 22px;
+    transform: translate(-50%, -50%);
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Cg fill='%23C8A95B'%3E%3Cpath d='M50 4 L61 30 L89 24 L70 46 L96 61 L67 63 L74 91 L50 74 L26 91 L33 63 L4 61 L30 46 L11 24 L39 30 Z'/%3E%3C/g%3E%3C/svg%3E");
+    background-size: contain; background-repeat: no-repeat;
+  }
+  .btn-primary { display:inline-flex; align-items:center; justify-content:center; gap:8px; border-radius:9999px; background:#0B5D3B; color:#fff; padding:12px 24px; font-size:14px; font-weight:600; box-shadow:0 4px 24px -4px rgba(11,93,59,0.12); transition:all .3s; }
+  .btn-primary:hover { background:#073D27; }
+  .btn-outline { display:inline-flex; align-items:center; justify-content:center; gap:8px; border-radius:9999px; border:1px solid rgba(255,255,255,0.7); background:rgba(255,255,255,0.1); color:#fff; padding:12px 24px; font-size:14px; font-weight:600; backdrop-filter: blur(6px); transition:all .3s; }
+  .btn-outline:hover { background:#fff; color:#073D27; }
+  .btn-gold { display:inline-flex; align-items:center; justify-content:center; gap:8px; border-radius:9999px; background:#C8A95B; color:#073D27; padding:12px 24px; font-size:14px; font-weight:600; box-shadow:0 4px 20px -4px rgba(200,169,91,0.35); transition:all .3s; }
+  .btn-gold:hover { background:#9C7F3B; color:#fff; }
+  .card { border-radius:16px; border:1px solid rgba(0,0,0,0.05); background:#fff; box-shadow:0 4px 24px -4px rgba(11,93,59,0.12); transition:all .3s; }
+  .card:hover { transform: translateY(-4px); box-shadow:0 8px 30px -8px rgba(11,93,59,0.18); }
+  .fade-up { animation: fadeUp .6s ease-out forwards; }
+  @keyframes fadeUp { from { opacity:0; transform:translateY(16px);} to {opacity:1; transform:translateY(0);} }
+  [data-reveal] { opacity:0; transform: translateY(16px); transition: opacity .6s ease, transform .6s ease; }
+  [data-reveal].in-view { opacity:1; transform:none; }
+  ::-webkit-scrollbar { height: 6px; width: 6px; }
+  ::-webkit-scrollbar-thumb { background:#C8A95B; border-radius:4px; }
+  .tab-btn.active { background:#0B5D3B; color:#fff; }
+  .prayer-slot.active { background:#C8A95B; color:#073D27; }
+  [dir="rtl"] .flip-x { transform: scaleX(-1); }
+</style>
+</head>
+<body class="bg-white lang-ur">
+
+<!-- TOP BAR -->
+<header class="sticky top-0 z-50">
+  <div id="topbar" class="hidden md:block bg-primary-dark text-white/90 transition-all duration-300 overflow-hidden">
+    <div class="max-w-7xl mx-auto px-6 flex items-center justify-between py-2 text-xs">
+      <div class="flex items-center gap-5">
+        <a href="tel:+92915811234" class="flex items-center gap-1.5 hover:text-gold-light"><i data-lucide="phone" class="w-3.5 h-3.5"></i>+92 91 581 1234</a>
+        <a href="mailto:info@alnooruniversity.edu.pk" class="flex items-center gap-1.5 hover:text-gold-light"><i data-lucide="mail" class="w-3.5 h-3.5"></i>info@alnooruniversity.edu.pk</a>
+        <span id="gregDate" class="flex items-center gap-1.5"><i data-lucide="calendar" class="w-3.5 h-3.5"></i></span>
+      </div>
+      <div class="flex items-center gap-4">
+        <div class="flex items-center gap-3">
+          <a href="#" class="hover:text-gold-light"><i data-lucide="facebook" class="w-3.5 h-3.5"></i></a>
+          <a href="#" class="hover:text-gold-light"><i data-lucide="youtube" class="w-3.5 h-3.5"></i></a>
+          <a href="#" class="hover:text-gold-light"><i data-lucide="twitter" class="w-3.5 h-3.5"></i></a>
+          <a href="#" class="hover:text-gold-light"><i data-lucide="instagram" class="w-3.5 h-3.5"></i></a>
+        </div>
+        <div class="h-3 w-px bg-white/20"></div>
+        <div class="flex items-center gap-2">
+          <button onclick="setLang('ur')" data-langbtn="ur" class="rounded px-1.5 py-0.5">اردو</button>
+          <button onclick="setLang('en')" data-langbtn="en" class="rounded px-1.5 py-0.5">English</button>
+          <button onclick="setLang('ar')" data-langbtn="ar" class="rounded px-1.5 py-0.5">العربية</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Bismillah + Hijri strip -->
+  <div class="bg-primary text-white text-center py-2 text-sm">
+    <span class="font-arabic tracking-wide">بِسْمِ اللَّهِ الرَّحْمَنِ الرَّحِيم</span>
+    <span class="mx-3 opacity-50">|</span>
+    <span id="hijriDate">۴ صفر ۱۴۴۸ھ</span>
+  </div>
+
+  <div class="border-b border-black/5 bg-white/95 backdrop-blur-md">
+    <div class="max-w-7xl mx-auto px-6 flex items-center justify-between py-3">
+      <a href="#home" class="flex items-center gap-3">
+        <span class="motif-star flex h-11 w-11 items-center justify-center rounded-full bg-primary text-white shrink-0">
+          <span class="font-arabic text-lg">ن</span>
+        </span>
+        <span class="leading-tight">
+          <span class="block font-display text-xl font-semibold text-primary-dark" data-i18n="siteName">الـنور اسلامک یونیورسٹی</span>
+          <span class="block text-[11px] uppercase tracking-[0.2em] text-gold-dark" data-i18n="tagline">ایمان، علم اور کمال</span>
+        </span>
+      </a>
+
+      <nav class="hidden lg:flex items-center gap-1" id="mainNav">
+        <a href="#home" class="px-3 py-2 text-sm font-medium hover:text-primary" data-i18n="navHome">صفحہ اول</a>
+
+        <div class="relative group">
+          <button class="px-3 py-2 text-sm font-medium hover:text-primary flex items-center gap-1"><span data-i18n="navAbout">تعارف</span> <i data-lucide="chevron-down" class="w-3.5 h-3.5"></i></button>
+          <div class="absolute start-0 top-full pt-3 hidden group-hover:block w-72 z-20">
+            <div class="flex flex-col gap-1 rounded-2xl border border-black/5 bg-white p-3 shadow-card">
+              <a href="#founder" class="rounded-xl px-3 py-2.5 text-sm hover:bg-mist" data-i18n="navFounder">پیغام بانی جامعہ</a>
+              <a href="#about" class="rounded-xl px-3 py-2.5 text-sm hover:bg-mist" data-i18n="navMission">اغراض و مقاصد</a>
+              <a href="#about" class="rounded-xl px-3 py-2.5 text-sm hover:bg-mist" data-i18n="navGovernance">نظم و نسق</a>
+              <a href="#departments" class="rounded-xl px-3 py-2.5 text-sm hover:bg-mist" data-i18n="navBranches">شاخیں و شعبہ جات</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="relative group">
+          <button class="px-3 py-2 text-sm font-medium hover:text-primary flex items-center gap-1"><span data-i18n="navAcademics">نظام تعلیم</span> <i data-lucide="chevron-down" class="w-3.5 h-3.5"></i></button>
+          <div class="absolute start-0 top-full pt-3 hidden group-hover:block w-72 z-20">
+            <div class="flex flex-col gap-1 rounded-2xl border border-black/5 bg-white p-3 shadow-card">
+              <a href="#departments" class="rounded-xl px-3 py-2.5 text-sm hover:bg-mist" data-i18n="navCurriculum">نصاب تعلیم</a>
+              <a href="#admissions" class="rounded-xl px-3 py-2.5 text-sm hover:bg-mist" data-i18n="navAdmissions">داخلہ کی شرائط</a>
+              <a href="#" class="rounded-xl px-3 py-2.5 text-sm hover:bg-mist" data-i18n="navExams">نظام امتحانات</a>
+              <a href="#" class="rounded-xl px-3 py-2.5 text-sm hover:bg-mist" data-i18n="navGuidelines">ہدایات برائے طلبہ</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="relative group">
+          <button class="px-3 py-2 text-sm font-medium hover:text-primary flex items-center gap-1"><span data-i18n="navFatwa">دارالافتاء</span> <i data-lucide="chevron-down" class="w-3.5 h-3.5"></i></button>
+          <div class="absolute start-0 top-full pt-3 hidden group-hover:block w-72 z-20">
+            <div class="flex flex-col gap-1 rounded-2xl border border-black/5 bg-white p-3 shadow-card">
+              <a href="#fatwa" class="rounded-xl px-3 py-2.5 text-sm hover:bg-mist" data-i18n="navNewQ">نئے سوالات</a>
+              <a href="#" class="rounded-xl px-3 py-2.5 text-sm hover:bg-mist" data-i18n="navNames">اسلامی نام</a>
+              <a href="#" class="rounded-xl px-3 py-2.5 text-sm hover:bg-mist" data-i18n="navDuas">مسنون و ماثور دعائیں</a>
+              <a href="#prayer" class="rounded-xl px-3 py-2.5 text-sm hover:bg-mist" data-i18n="navPrayer">نماز کے اوقات</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="relative group">
+          <button class="px-3 py-2 text-sm font-medium hover:text-primary flex items-center gap-1"><span data-i18n="navPub">نشر و اشاعت</span> <i data-lucide="chevron-down" class="w-3.5 h-3.5"></i></button>
+          <div class="absolute start-0 top-full pt-3 hidden group-hover:block w-72 z-20">
+            <div class="flex flex-col gap-1 rounded-2xl border border-black/5 bg-white p-3 shadow-card">
+              <a href="#magazine" class="rounded-xl px-3 py-2.5 text-sm hover:bg-mist" data-i18n="navMagazine">ماہنامہ النور</a>
+              <a href="#books" class="rounded-xl px-3 py-2.5 text-sm hover:bg-mist" data-i18n="navBooks">کتابیں</a>
+              <a href="#papers" class="rounded-xl px-3 py-2.5 text-sm hover:bg-mist" data-i18n="navPapers">مقالات</a>
+              <a href="#editorials" class="rounded-xl px-3 py-2.5 text-sm hover:bg-mist" data-i18n="navEditorials">بصائر و عبر</a>
+            </div>
+          </div>
+        </div>
+
+        <a href="#footer" class="px-3 py-2 text-sm font-medium hover:text-primary" data-i18n="navContact">رابطہ</a>
+      </nav>
+
+      <div class="flex items-center gap-2">
+        <button class="hidden sm:block rounded-full p-2.5 hover:bg-mist"><i data-lucide="search" class="w-[18px] h-[18px]"></i></button>
+        <a href="#" class="hidden sm:flex items-center gap-1.5 rounded-full px-4 py-2.5 text-sm font-semibold text-primary-dark hover:bg-mist"><i data-lucide="log-in" class="w-4 h-4"></i><span data-i18n="login">لاگ ان</span></a>
+        <a href="#admissions" class="btn-primary hidden sm:inline-flex" data-i18n="apply">داخلہ لیں</a>
+        <button id="mobileBtn" class="lg:hidden rounded-md p-2 text-primary-dark"><i data-lucide="menu" class="w-6 h-6"></i></button>
+      </div>
+    </div>
+  </div>
+
+  <div id="mobileMenu" class="hidden fixed inset-0 z-[60] bg-primary-dark/98 text-white lg:hidden overflow-y-auto">
+    <div class="flex items-center justify-between px-5 py-4">
+      <span class="font-display text-lg font-semibold" data-i18n="siteName">الـنور اسلامک یونیورسٹی</span>
+      <button id="mobileClose"><i data-lucide="x" class="w-6 h-6"></i></button>
+    </div>
+    <nav class="flex flex-col gap-1 px-5 py-4 text-base">
+      <a href="#home" class="py-2 border-b border-white/10" data-i18n="navHome">صفحہ اول</a>
+      <a href="#about" class="py-2 border-b border-white/10" data-i18n="navAbout">تعارف</a>
+      <a href="#fatwa" class="py-2 border-b border-white/10" data-i18n="navFatwa">دارالافتاء</a>
+      <a href="#magazine" class="py-2 border-b border-white/10" data-i18n="navMagazine">ماہنامہ النور</a>
+      <a href="#books" class="py-2 border-b border-white/10" data-i18n="navBooks">کتابیں</a>
+      <a href="#prayer" class="py-2 border-b border-white/10" data-i18n="navPrayer">نماز کے اوقات</a>
+      <a href="#departments" class="py-2 border-b border-white/10" data-i18n="navBranches">شعبہ جات</a>
+      <a href="#footer" class="py-2 border-b border-white/10" data-i18n="navContact">رابطہ</a>
+      <a href="#admissions" class="btn-gold mt-4 text-center" data-i18n="apply">داخلہ لیں</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+<!-- SIMPLE HERO (Banuri-style: calm, text-first, no slider) -->
+<section id="home" class="relative bg-primary-dark overflow-hidden">
+  <div class="motif-star pointer-events-none absolute -start-16 -top-16 h-72 w-72 opacity-10"></div>
+  <div class="motif-star pointer-events-none absolute -bottom-16 -end-10 h-80 w-80 opacity-10"></div>
+  <div class="max-w-5xl mx-auto px-6 py-16 sm:py-20 text-center relative" data-reveal>
+    <span class="inline-flex text-xs font-semibold uppercase tracking-[0.2em] text-gold-light" data-i18n="heroEyebrow">جامعہ علوم اسلامیہ و جدید علوم</span>
+    <h1 class="mt-4 text-3xl sm:text-5xl font-semibold leading-tight text-white" data-i18n="heroTitle">علم و ایمان کا سنگم — الـنور اسلامک یونیورسٹی</h1>
+    <p class="mt-5 max-w-2xl mx-auto text-base sm:text-lg text-white/80" data-i18n="heroSub">قرآن و سنت کی روشنی میں جدید علوم کی تدریس، تحقیق اور دارالافتاء کی خدمات — طلبہ کی علمی و اخلاقی تربیت کے لیے وقف ایک ادارہ۔</p>
+    <div class="mt-8 flex flex-wrap justify-center gap-4">
+      <a href="#admissions" class="btn-gold" data-i18n="apply">داخلہ لیں</a>
+      <a href="#fatwa" class="btn-outline" data-i18n="askQuestion">مسئلہ پوچھیں</a>
+    </div>
+  </div>
+</section>
+
+<!-- FEATURED 6 CARDS (mirrors Banuri's top image-cards row) -->
+<section class="max-w-7xl mx-auto px-6 py-16">
+  <div id="featuredGrid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6"></div>
+</section>
+
+<div class="divider-star max-w-7xl mx-auto"></div>
+
+<!-- WELCOME / ABOUT -->
+<section id="about" class="max-w-7xl mx-auto px-6 py-20 grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+  <div class="relative" data-reveal>
+    <div class="relative aspect-[4/5] overflow-hidden rounded-3xl shadow-card">
+      <img src="https://images.unsplash.com/photo-1523240795612-9a054b0db644?q=80&w=900&auto=format&fit=crop" class="w-full h-full object-cover" alt="Students on campus"/>
+    </div>
+    <div class="hidden sm:block absolute -bottom-6 -start-6 rounded-2xl bg-white p-5 shadow-card">
+      <p class="font-display text-3xl font-semibold text-primary">27+</p>
+      <p class="text-xs text-ink/60" data-i18n="yearsLabel">سالہا سال کی خدمت</p>
+    </div>
+  </div>
+  <div data-reveal>
+    <span class="inline-flex text-xs font-semibold uppercase tracking-[0.2em] text-gold-dark" data-i18n="welcomeEyebrow">الـنور میں خوش آمدید</span>
+    <h2 class="mt-3 text-3xl sm:text-4xl font-semibold text-primary-dark leading-tight" data-i18n="welcomeTitle">علم کے ذریعے کردار سازی</h2>
+    <p class="mt-5 text-ink/75" data-i18n="welcomeBody">الـنور اسلامک یونیورسٹی قرآن و سنت کی لازوال تعلیمات کو جدید علمی شعبہ جات کے ساتھ یکجا کرتی ہے۔ اپنے قیام سے اب تک ہم نے ایسے فارغ التحصیل تیار کیے ہیں جو دیانت کے ساتھ قیادت کرتے اور اپنی برادریوں کی خدمت کرتے ہیں۔</p>
+    <div class="mt-8 grid gap-5 sm:grid-cols-2">
+      <div class="rounded-2xl border border-black/5 bg-mist p-5">
+        <i data-lucide="target" class="text-primary w-[22px] h-[22px]"></i>
+        <h3 class="mt-3 text-sm font-semibold text-primary-dark" data-i18n="missionTitle">ہمارا مقصد</h3>
+        <p class="mt-1.5 text-sm text-ink/70" data-i18n="missionBody">شرعی بنیادوں پر استوار، علمی طور پر مستحکم تعلیم کی فراہمی جو باکردار علماء اور پیشہ ور افراد تیار کرے۔</p>
+      </div>
+      <div class="rounded-2xl border border-black/5 bg-mist p-5">
+        <i data-lucide="eye" class="text-primary w-[22px] h-[22px]"></i>
+        <h3 class="mt-3 text-sm font-semibold text-primary-dark" data-i18n="visionTitle">ہماری منزل</h3>
+        <p class="mt-1.5 text-sm text-ink/70" data-i18n="visionBody">دینی و عصری علوم میں امتیاز کے لیے عالمی سطح پر پہچانا جانے والا ادارہ بننا۔</p>
+      </div>
+    </div>
+    <a href="#about" class="btn-primary mt-8" data-i18n="readMore">مزید پڑھیں</a>
+  </div>
+</section>
+
+<div class="divider-star max-w-7xl mx-auto"></div>
+
+<!-- FATWA CENTER (دارالافتاء) -->
+<section id="fatwa" class="bg-mist py-20">
+  <div class="max-w-7xl mx-auto px-6">
+    <div class="max-w-xl mx-auto text-center">
+      <span class="text-xs font-semibold uppercase tracking-[0.2em] text-gold-dark" data-i18n="fatwaEyebrow">دارالافتاء الـنور</span>
+      <h2 class="mt-3 text-3xl sm:text-4xl font-semibold text-primary-dark" data-i18n="fatwaTitle">آپ کے مسائل، مستند جواب</h2>
+      <p class="mt-3 text-sm text-ink/65" data-i18n="fatwaSub">مستند مفتیانِ کرام کی زیرِ نگرانی روزمرہ کے شرعی مسائل کے تحریری جوابات۔</p>
+    </div>
+
+    <div class="mt-10 flex justify-center gap-3">
+      <button onclick="setFatwaTab('new')" data-tab="new" class="tab-btn active rounded-full border border-primary/20 px-5 py-2 text-sm font-semibold text-primary-dark" data-i18n="tabNew">نئے سوالات</button>
+      <button onclick="setFatwaTab('selected')" data-tab="selected" class="tab-btn rounded-full border border-primary/20 px-5 py-2 text-sm font-semibold text-primary-dark" data-i18n="tabSelected">منتخب سوالات</button>
+    </div>
+
+    <div id="fatwaList" class="mt-10 grid grid-cols-1 md:grid-cols-2 gap-5"></div>
+
+    <div class="mt-8 text-center">
+      <a href="#" class="btn-outline !border-primary !bg-transparent !text-primary hover:!bg-primary hover:!text-white" data-i18n="askQuestion">مسئلہ پوچھیں</a>
+    </div>
+  </div>
+</section>
+
+<!-- PRAYER TIMES -->
+<section id="prayer" class="relative overflow-hidden bg-primary-dark py-14 text-white">
+  <div class="motif-star pointer-events-none absolute -start-16 -top-16 h-72 w-72 opacity-10"></div>
+  <div class="max-w-7xl mx-auto px-6 relative">
+    <div class="flex flex-col sm:flex-row items-center justify-between gap-3 mb-8 text-center sm:text-start">
+      <div>
+        <span class="text-xs font-semibold uppercase tracking-[0.2em] text-gold-light" data-i18n="prayerEyebrow">نماز کے اوقات</span>
+        <h2 class="mt-2 text-2xl sm:text-3xl font-semibold" id="prayerCityLine">پشاور میں آج نماز کے اوقات</h2>
+      </div>
+      <span id="hijriDate2" class="text-sm text-white/70">۴ صفر ۱۴۴۸ھ</span>
+    </div>
+    <div id="prayerGrid" class="grid grid-cols-3 sm:grid-cols-6 gap-4 text-center"></div>
+  </div>
+</section>
+
+<div class="divider-star max-w-7xl mx-auto"></div>
+
+<!-- EDITORIALS (بصائر و عبر) -->
+<section id="editorials" class="max-w-7xl mx-auto px-6 py-20">
+  <div class="flex flex-col sm:flex-row items-start sm:items-end justify-between gap-4">
+    <div>
+      <span class="text-xs font-semibold uppercase tracking-[0.2em] text-gold-dark" data-i18n="editorialsEyebrow">اداریے</span>
+      <h2 class="mt-3 text-3xl sm:text-4xl font-semibold text-primary-dark" data-i18n="editorialsTitle">بصائر و عبر</h2>
+    </div>
+  </div>
+  <div id="editorialsGrid" class="mt-10 grid grid-cols-1 md:grid-cols-3 gap-6"></div>
+</section>
+
+<div class="divider-star max-w-7xl mx-auto"></div>
+
+<!-- MAGAZINE -->
+<section id="magazine" class="bg-mist py-20">
+  <div class="max-w-7xl mx-auto px-6 grid grid-cols-1 lg:grid-cols-3 gap-10 items-center">
+    <div class="lg:col-span-1" data-reveal>
+      <div class="relative aspect-[3/4] max-w-xs mx-auto overflow-hidden rounded-2xl shadow-card">
+        <img src="https://images.unsplash.com/photo-1521587760476-6c12a4b040da?q=80&w=600&auto=format&fit=crop" class="w-full h-full object-cover" alt="Magazine"/>
+      </div>
+    </div>
+    <div class="lg:col-span-2">
+      <span class="text-xs font-semibold uppercase tracking-[0.2em] text-gold-dark" data-i18n="magazineEyebrow">علمی مجلہ</span>
+      <h2 class="mt-3 text-3xl sm:text-4xl font-semibold text-primary-dark" data-i18n="magazineTitle">ماہنامہ النور</h2>
+      <p class="mt-4 text-ink/70" data-i18n="magazineBody">قرآن و سنت کی تعلیمات، عصری مسائل کے تحقیقی جائزے اور اساتذہ و طلبہ کی تحریروں پر مشتمل ایک ماہانہ علمی مجلہ۔</p>
+      <div id="articlesGrid" class="mt-8 grid grid-cols-1 sm:grid-cols-3 gap-4"></div>
+      <a href="#" class="btn-primary mt-8" data-i18n="viewArchive">مجلے کا آرکائیو دیکھیں</a>
+    </div>
+  </div>
+</section>
+
+<!-- BOOKS -->
+<section id="books" class="max-w-7xl mx-auto px-6 py-20">
+  <div class="max-w-xl mx-auto text-center">
+    <span class="text-xs font-semibold uppercase tracking-[0.2em] text-gold-dark" data-i18n="booksEyebrow">مطبوعات</span>
+    <h2 class="mt-3 text-3xl sm:text-4xl font-semibold text-primary-dark" data-i18n="booksTitle">کتابیں</h2>
+    <p class="mt-3 text-sm text-ink/65" data-i18n="booksSub">مفید علمی و اصلاحی کتابیں مفت پی ڈی ایف کی صورت میں دستیاب۔</p>
+  </div>
+  <div id="booksGrid" class="mt-10 grid grid-cols-1 sm:grid-cols-3 gap-6"></div>
+</section>
+
+<div class="divider-star max-w-7xl mx-auto"></div>
+
+<!-- DEPARTMENTS -->
+<section id="departments" class="bg-mist py-20">
+  <div class="max-w-7xl mx-auto px-6">
+    <div class="flex flex-col sm:flex-row items-start sm:items-end justify-between gap-4">
+      <div>
+        <span class="text-xs font-semibold uppercase tracking-[0.2em] text-gold-dark" data-i18n="deptEyebrow">تعلیمی شعبہ جات</span>
+        <h2 class="mt-3 text-3xl sm:text-4xl font-semibold text-primary-dark" data-i18n="deptTitle">اہم شعبہ جات</h2>
+      </div>
+      <a href="#departments" class="btn-outline !border-primary !bg-transparent !text-primary hover:!bg-primary hover:!text-white" data-i18n="viewAllDept">تمام شعبہ جات دیکھیں</a>
+    </div>
+    <div id="departmentsGrid" class="mt-10 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6"></div>
+  </div>
+</section>
+
+<!-- PAPERS (مقالات) -->
+<section id="papers" class="max-w-7xl mx-auto px-6 py-20">
+  <div class="max-w-xl mx-auto text-center">
+    <span class="text-xs font-semibold uppercase tracking-[0.2em] text-gold-dark" data-i18n="papersEyebrow">تحقیقی مضامین</span>
+    <h2 class="mt-3 text-3xl sm:text-4xl font-semibold text-primary-dark" data-i18n="papersTitle">مقالات</h2>
+  </div>
+  <div id="papersList" class="mt-10 max-w-3xl mx-auto flex flex-col gap-4"></div>
+</section>
+
+<div class="divider-star max-w-7xl mx-auto"></div>
+
+<!-- SCHOLARS -->
+<section id="scholars" class="bg-mist py-20">
+  <div class="max-w-7xl mx-auto px-6">
+    <div class="max-w-xl mx-auto text-center">
+      <span class="text-xs font-semibold uppercase tracking-[0.2em] text-gold-dark" data-i18n="scholarsEyebrow">ممتاز اساتذہ</span>
+      <h2 class="mt-3 text-3xl sm:text-4xl font-semibold text-primary-dark" data-i18n="scholarsTitle">ہمارے اساتذہ</h2>
+    </div>
+    <div id="scholarsGrid" class="mt-12 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6"></div>
+  </div>
+</section>
+
+<!-- STATS -->
+<section class="relative overflow-hidden bg-primary-dark py-20 text-white">
+  <div class="motif-star pointer-events-none absolute -start-16 -top-16 h-72 w-72 opacity-10"></div>
+  <div class="motif-star pointer-events-none absolute -bottom-20 -end-10 h-80 w-80 opacity-10"></div>
+  <div id="statsGrid" class="max-w-7xl mx-auto px-6 relative grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-8 text-center"></div>
+</section>
+
+<!-- APP DOWNLOAD (mirrors Banuri's app badges strip) -->
+<section class="max-w-7xl mx-auto px-6 py-16">
+  <div class="rounded-3xl bg-mist p-8 sm:p-12 flex flex-col sm:flex-row items-center justify-between gap-8">
+    <div class="text-center sm:text-start">
+      <span class="text-xs font-semibold uppercase tracking-[0.2em] text-gold-dark" data-i18n="appEyebrow">موبائل ایپ</span>
+      <h2 class="mt-2 text-2xl sm:text-3xl font-semibold text-primary-dark" data-i18n="appTitle">الـنور موبائل ایپلیکیشن</h2>
+      <p class="mt-2 max-w-md text-sm text-ink/65" data-i18n="appBody">دارالافتاء، نماز کے اوقات اور ماہنامہ النور اپنے موبائل پر — کہیں بھی، کبھی بھی۔</p>
+      <div class="mt-5 flex justify-center sm:justify-start gap-3">
+        <a href="#" class="rounded-xl bg-black text-white px-4 py-2.5 text-xs flex items-center gap-2"><i data-lucide="apple" class="w-4 h-4"></i> App Store</a>
+        <a href="#" class="rounded-xl bg-black text-white px-4 py-2.5 text-xs flex items-center gap-2"><i data-lucide="play" class="w-4 h-4"></i> Google Play</a>
+      </div>
+    </div>
+    <img src="https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?q=80&w=500&auto=format&fit=crop" class="w-40 sm:w-52 rounded-2xl shadow-card" alt="App preview"/>
+  </div>
+</section>
+
+<!-- DONATION -->
+<section class="relative overflow-hidden bg-primary py-16">
+  <div class="max-w-7xl mx-auto px-6 relative flex flex-col sm:flex-row items-center justify-between gap-6 text-center sm:text-start text-white">
+    <div class="flex items-center gap-4">
+      <span class="hidden sm:flex h-14 w-14 shrink-0 items-center justify-center rounded-full bg-white/15"><i data-lucide="hand-heart" class="w-6 h-6"></i></span>
+      <div>
+        <h2 class="text-2xl sm:text-3xl font-semibold" data-i18n="donateTitle">آئندہ نسل کے علماء کی معاونت کریں</h2>
+        <p class="mt-2 max-w-xl text-white/80" data-i18n="donateBody">آپ کا تعاون وظائف، لائبریری کے وسائل اور تحقیق کے لیے استعمال ہوتا ہے۔</p>
+      </div>
+    </div>
+    <a href="#" class="btn-gold shrink-0" data-i18n="donateBtn">تعاون کریں</a>
+  </div>
+</section>
+
+<!-- NEWSLETTER -->
+<section class="max-w-7xl mx-auto px-6 py-16">
+  <div class="mx-auto max-w-3xl flex flex-col items-center gap-5 rounded-3xl border border-black/5 bg-mist p-8 sm:p-10 text-center">
+    <span class="flex h-12 w-12 items-center justify-center rounded-full bg-primary/10 text-primary"><i data-lucide="mail" class="w-[22px] h-[22px]"></i></span>
+    <div>
+      <h2 class="text-2xl font-semibold text-primary-dark" data-i18n="newsletterTitle">اپ ڈیٹ رہیں</h2>
+      <p class="mt-1.5 text-sm text-ink/65" data-i18n="newsletterBody">خبریں، داخلوں کی اطلاعات اور تقریبات کی معلومات کے لیے سبسکرائب کریں۔</p>
+    </div>
+    <form id="newsletterForm" class="flex w-full max-w-md flex-col sm:flex-row gap-3" onsubmit="event.preventDefault(); document.getElementById('newsletterForm').classList.add('hidden'); document.getElementById('newsletterThanks').classList.remove('hidden');">
+      <input type="email" required placeholder="ای میل ایڈریس درج کریں" data-i18n-placeholder="emailPlaceholder" class="w-full rounded-full border border-black/10 bg-white px-5 py-3 text-sm outline-none focus:ring-2 ring-gold/40"/>
+      <button type="submit" class="btn-primary shrink-0"><span data-i18n="subscribe">سبسکرائب کریں</span> <i data-lucide="send" class="w-[15px] h-[15px]"></i></button>
+    </form>
+    <p id="newsletterThanks" class="hidden text-sm font-medium text-primary" data-i18n="subscribeThanks">شکریہ — براہ کرم اپنا ای میل چیک کریں۔</p>
+  </div>
+</section>
+</main>
+
+<!-- FOOTER (Banuri-style sitemap layout) -->
+<footer id="footer" class="bg-primary-dark text-white/85">
+  <div class="max-w-7xl mx-auto px-6 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10 py-16">
+    <div>
+      <div class="flex items-center gap-3">
+        <span class="motif-star flex h-10 w-10 items-center justify-center rounded-full bg-white/10"><span class="font-arabic text-lg text-gold-light">ن</span></span>
+        <span class="text-lg font-semibold text-white" data-i18n="siteName">الـنور اسلامک یونیورسٹی</span>
+      </div>
+      <p class="mt-4 text-sm text-white/65" data-i18n="footerAbout">دینی و عصری علوم کے امتزاج پر مبنی ایک ممتاز تعلیمی ادارہ، جس کا مقصد باکردار اور باعلم قیادت تیار کرنا ہے۔</p>
+    </div>
+    <div>
+      <h3 class="text-base font-semibold text-gold-light" data-i18n="siteMap">ویب سائٹ کا نقشہ</h3>
+      <ul class="mt-4 flex flex-col gap-2.5 text-sm text-white/70">
+        <li><a href="#home" class="hover:text-white" data-i18n="navHome">صفحہ اول</a></li>
+        <li><a href="#about" class="hover:text-white" data-i18n="navAbout">تعارف</a></li>
+        <li><a href="#fatwa" class="hover:text-white" data-i18n="navFatwa">دارالافتاء</a></li>
+        <li><a href="#magazine" class="hover:text-white" data-i18n="navMagazine">ماہنامہ النور</a></li>
+        <li><a href="#books" class="hover:text-white" data-i18n="navBooks">کتابیں</a></li>
+      </ul>
+    </div>
+    <div>
+      <h3 class="text-base font-semibold text-gold-light" data-i18n="departmentsLabel">شعبہ جات</h3>
+      <ul class="mt-4 flex flex-col gap-2.5 text-sm text-white/70">
+        <li><a href="#fatwa" class="hover:text-white" data-i18n="askQuestion">مسئلہ پوچھیں</a></li>
+        <li><a href="#prayer" class="hover:text-white" data-i18n="navPrayer">نماز کے اوقات</a></li>
+        <li><a href="#" class="hover:text-white" data-i18n="navDuas">مسنون و ماثور دعائیں</a></li>
+        <li><a href="#footer" class="hover:text-white" data-i18n="navContact">رابطہ</a></li>
+        <li><a href="#" class="hover:text-white" data-i18n="donateBtn">طریقہ تعاون</a></li>
+      </ul>
+    </div>
+    <div>
+      <h3 class="text-base font-semibold text-gold-light" data-i18n="navContact">رابطہ</h3>
+      <ul class="mt-4 flex flex-col gap-3 text-sm text-white/70">
+        <li class="flex items-start gap-2.5"><i data-lucide="phone" class="w-[15px] h-[15px] mt-0.5"></i>+92 91 581 1234</li>
+        <li class="flex items-start gap-2.5"><i data-lucide="mail" class="w-[15px] h-[15px] mt-0.5"></i>info@alnooruniversity.edu.pk</li>
+        <li class="flex items-start gap-2.5"><i data-lucide="map-pin" class="w-[15px] h-[15px] mt-0.5"></i><span data-i18n="address">رنگ روڈ، یونیورسٹی ٹاؤن، پشاور، خیبر پختونخوا، پاکستان</span></li>
+      </ul>
+      <div class="mt-4 flex gap-3">
+        <a href="#" class="rounded-full bg-white/10 p-2.5 hover:bg-gold hover:text-primary-dark"><i data-lucide="facebook" class="w-4 h-4"></i></a>
+        <a href="#" class="rounded-full bg-white/10 p-2.5 hover:bg-gold hover:text-primary-dark"><i data-lucide="youtube" class="w-4 h-4"></i></a>
+        <a href="#" class="rounded-full bg-white/10 p-2.5 hover:bg-gold hover:text-primary-dark"><i data-lucide="instagram" class="w-4 h-4"></i></a>
+        <a href="#" class="rounded-full bg-white/10 p-2.5 hover:bg-gold hover:text-primary-dark"><i data-lucide="twitter" class="w-4 h-4"></i></a>
+      </div>
+    </div>
+  </div>
+  <div class="border-t border-white/10 py-5">
+    <div class="max-w-7xl mx-auto px-6 flex flex-col sm:flex-row items-center justify-between gap-3 text-xs text-white/55">
+      <p data-i18n="copyright">&copy; 2026 الـنور اسلامک یونیورسٹی۔ جملہ حقوق محفوظ ہیں۔</p>
+      <div class="flex gap-5">
+        <a href="#" class="hover:text-white" data-i18n="privacy">پرائیویسی پالیسی</a>
+        <a href="#" class="hover:text-white" data-i18n="terms">شرائط</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script>
+lucide.createIcons();
+
+/* =================== I18N =================== */
+const dict = {
+  ur: {
+    siteName: "الـنور اسلامک یونیورسٹی", tagline: "ایمان، علم اور کمال",
+    navHome:"صفحہ اول", navAbout:"تعارف", navFounder:"پیغام بانی جامعہ", navMission:"اغراض و مقاصد", navGovernance:"نظم و نسق", navBranches:"شاخیں و شعبہ جات",
+    navAcademics:"نظام تعلیم", navCurriculum:"نصاب تعلیم", navAdmissions:"داخلہ کی شرائط", navExams:"نظام امتحانات", navGuidelines:"ہدایات برائے طلبہ",
+    navFatwa:"دارالافتاء", navNewQ:"نئے سوالات", navNames:"اسلامی نام", navDuas:"مسنون و ماثور دعائیں", navPrayer:"نماز کے اوقات",
+    navPub:"نشر و اشاعت", navMagazine:"ماہنامہ النور", navBooks:"کتابیں", navPapers:"مقالات", navEditorials:"بصائر و عبر", navContact:"رابطہ",
+    login:"لاگ ان", apply:"داخلہ لیں", askQuestion:"مسئلہ پوچھیں",
+    heroEyebrow:"جامعہ علوم اسلامیہ و جدید علوم", heroTitle:"علم و ایمان کا سنگم — الـنور اسلامک یونیورسٹی",
+    heroSub:"قرآن و سنت کی روشنی میں جدید علوم کی تدریس، تحقیق اور دارالافتاء کی خدمات — طلبہ کی علمی و اخلاقی تربیت کے لیے وقف ایک ادارہ۔",
+    yearsLabel:"سالہا سال کی خدمت", welcomeEyebrow:"الـنور میں خوش آمدید", welcomeTitle:"علم کے ذریعے کردار سازی",
+    welcomeBody:"الـنور اسلامک یونیورسٹی قرآن و سنت کی لازوال تعلیمات کو جدید علمی شعبہ جات کے ساتھ یکجا کرتی ہے۔ اپنے قیام سے اب تک ہم نے ایسے فارغ التحصیل تیار کیے ہیں جو دیانت کے ساتھ قیادت کرتے اور اپنی برادریوں کی خدمت کرتے ہیں۔",
+    missionTitle:"ہمارا مقصد", missionBody:"شرعی بنیادوں پر استوار، علمی طور پر مستحکم تعلیم کی فراہمی جو باکردار علماء اور پیشہ ور افراد تیار کرے۔",
+    visionTitle:"ہماری منزل", visionBody:"دینی و عصری علوم میں امتیاز کے لیے عالمی سطح پر پہچانا جانے والا ادارہ بننا۔", readMore:"مزید پڑھیں",
+    fatwaEyebrow:"دارالافتاء الـنور", fatwaTitle:"آپ کے مسائل، مستند جواب", fatwaSub:"مستند مفتیانِ کرام کی زیرِ نگرانی روزمرہ کے شرعی مسائل کے تحریری جوابات۔",
+    tabNew:"نئے سوالات", tabSelected:"منتخب سوالات",
+    prayerEyebrow:"نماز کے اوقات", editorialsEyebrow:"اداریے", editorialsTitle:"بصائر و عبر",
+    magazineEyebrow:"علمی مجلہ", magazineTitle:"ماہنامہ النور", magazineBody:"قرآن و سنت کی تعلیمات، عصری مسائل کے تحقیقی جائزے اور اساتذہ و طلبہ کی تحریروں پر مشتمل ایک ماہانہ علمی مجلہ۔", viewArchive:"مجلے کا آرکائیو دیکھیں",
+    booksEyebrow:"مطبوعات", booksTitle:"کتابیں", booksSub:"مفید علمی و اصلاحی کتابیں مفت پی ڈی ایف کی صورت میں دستیاب۔",
+    deptEyebrow:"تعلیمی شعبہ جات", deptTitle:"اہم شعبہ جات", viewAllDept:"تمام شعبہ جات دیکھیں",
+    papersEyebrow:"تحقیقی مضامین", papersTitle:"مقالات",
+    scholarsEyebrow:"ممتاز اساتذہ", scholarsTitle:"ہمارے اساتذہ",
+    appEyebrow:"موبائل ایپ", appTitle:"الـنور موبائل ایپلیکیشن", appBody:"دارالافتاء، نماز کے اوقات اور ماہنامہ النور اپنے موبائل پر — کہیں بھی، کبھی بھی۔",
+    donateTitle:"آئندہ نسل کے علماء کی معاونت کریں", donateBody:"آپ کا تعاون وظائف، لائبریری کے وسائل اور تحقیق کے لیے استعمال ہوتا ہے۔", donateBtn:"تعاون کریں",
+    newsletterTitle:"اپ ڈیٹ رہیں", newsletterBody:"خبریں، داخلوں کی اطلاعات اور تقریبات کی معلومات کے لیے سبسکرائب کریں۔", subscribe:"سبسکرائب کریں", subscribeThanks:"شکریہ — براہ کرم اپنا ای میل چیک کریں۔", emailPlaceholder:"ای میل ایڈریس درج کریں",
+    footerAbout:"دینی و عصری علوم کے امتزاج پر مبنی ایک ممتاز تعلیمی ادارہ، جس کا مقصد باکردار اور باعلم قیادت تیار کرنا ہے۔",
+    siteMap:"ویب سائٹ کا نقشہ", departmentsLabel:"شعبہ جات", address:"رنگ روڈ، یونیورسٹی ٹاؤن، پشاور، خیبر پختونخوا، پاکستان",
+    copyright:"© 2026 الـنور اسلامک یونیورسٹی۔ جملہ حقوق محفوظ ہیں۔", privacy:"پرائیویسی پالیسی", terms:"شرائط",
+    readFull:"تفصیل", clickToRead:"پڑھنے کے لیے کلک کریں", prayerCity:"پشاور میں آج نماز کے اوقات"
+  },
+  en: {
+    siteName:"Al-Noor Islamic University", tagline:"Faith · Knowledge · Excellence",
+    navHome:"Home", navAbout:"About", navFounder:"Founder's Message", navMission:"Mission & History", navGovernance:"Governance", navBranches:"Campuses & Departments",
+    navAcademics:"Academics", navCurriculum:"Curriculum", navAdmissions:"Admissions", navExams:"Examination System", navGuidelines:"Student Guidelines",
+    navFatwa:"Fatwa Center", navNewQ:"New Questions", navNames:"Islamic Names", navDuas:"Masnoon Duas", navPrayer:"Prayer Times",
+    navPub:"Publications", navMagazine:"Al-Noor Journal", navBooks:"Books", navPapers:"Papers", navEditorials:"Editorials", navContact:"Contact",
+    login:"Login", apply:"Apply Now", askQuestion:"Ask a Question",
+    heroEyebrow:"A Center of Islamic & Modern Scholarship", heroTitle:"Where Faith Meets Knowledge — Al-Noor Islamic University",
+    heroSub:"Teaching modern disciplines in the light of the Qur'an and Sunnah, with research and Fatwa services devoted to the academic and moral development of students.",
+    yearsLabel:"Years of Service", welcomeEyebrow:"Welcome to Al-Noor", welcomeTitle:"Building Character Through Knowledge",
+    welcomeBody:"Al-Noor Islamic University brings together the timeless teachings of the Qur'an and Sunnah with contemporary academic disciplines. Since our founding, we have prepared graduates who lead with integrity and serve their communities.",
+    missionTitle:"Our Mission", missionBody:"To deliver academically rigorous, Sharia-grounded education that shapes principled scholars and professionals.",
+    visionTitle:"Our Vision", visionBody:"To be a leading institute recognized globally for excellence in Islamic and modern scholarship.", readMore:"Read More",
+    fatwaEyebrow:"Al-Noor Fatwa Center", fatwaTitle:"Your Questions, Answered Reliably", fatwaSub:"Written answers to everyday Sharia questions, supervised by qualified Muftis.",
+    tabNew:"New Questions", tabSelected:"Selected Questions",
+    prayerEyebrow:"Prayer Times", editorialsEyebrow:"Editorials", editorialsTitle:"Reflections & Insights",
+    magazineEyebrow:"Scholarly Journal", magazineTitle:"Al-Noor Monthly Journal", magazineBody:"A monthly scholarly journal featuring Qur'anic and Sunnah teachings, research on contemporary issues, and writings by faculty and students.", viewArchive:"View Journal Archive",
+    booksEyebrow:"Publications", booksTitle:"Books", booksSub:"Beneficial scholarly and reformative books, available free as PDFs.",
+    deptEyebrow:"Academics", deptTitle:"Featured Departments", viewAllDept:"View All Departments",
+    papersEyebrow:"Research", papersTitle:"Papers",
+    scholarsEyebrow:"Distinguished Faculty", scholarsTitle:"Our Scholars",
+    appEyebrow:"Mobile App", appTitle:"Al-Noor Mobile Application", appBody:"The Fatwa Center, Prayer Times and the Al-Noor Journal on your phone — anywhere, anytime.",
+    donateTitle:"Support the Next Generation of Scholars", donateBody:"Your contribution funds scholarships, library resources, and research.", donateBtn:"Donate Now",
+    newsletterTitle:"Stay Updated", newsletterBody:"Subscribe to receive news, admissions updates, and event announcements.", subscribe:"Subscribe", subscribeThanks:"Thank you — please check your inbox to confirm.", emailPlaceholder:"Enter your email address",
+    footerAbout:"A distinguished institution combining Islamic and contemporary scholarship, dedicated to shaping principled, knowledgeable leaders.",
+    siteMap:"Site Map", departmentsLabel:"Departments", address:"Ring Road, University Town, Peshawar, KPK, Pakistan",
+    copyright:"© 2026 Al-Noor Islamic University. All rights reserved.", privacy:"Privacy Policy", terms:"Terms",
+    readFull:"Read More", clickToRead:"Click to Read", prayerCity:"Today's Prayer Times in Peshawar"
+  },
+  ar: {
+    siteName:"جامعة النور الإسلامية", tagline:"الإيمان · العلم · التميّز",
+    navHome:"الرئيسية", navAbout:"عن الجامعة", navFounder:"كلمة المؤسس", navMission:"الأهداف والتاريخ", navGovernance:"الإدارة", navBranches:"الفروع والأقسام",
+    navAcademics:"النظام الدراسي", navCurriculum:"المنهج", navAdmissions:"القبول", navExams:"نظام الامتحانات", navGuidelines:"إرشادات الطلاب",
+    navFatwa:"دار الإفتاء", navNewQ:"أسئلة جديدة", navNames:"أسماء إسلامية", navDuas:"أدعية مأثورة", navPrayer:"مواقيت الصلاة",
+    navPub:"الإصدارات", navMagazine:"مجلة النور", navBooks:"الكتب", navPapers:"المقالات", navEditorials:"الافتتاحيات", navContact:"اتصل بنا",
+    login:"تسجيل الدخول", apply:"قدّم الآن", askQuestion:"اسأل سؤالاً",
+    heroEyebrow:"مركز للعلوم الإسلامية والحديثة", heroTitle:"حيث يلتقي الإيمان بالعلم — جامعة النور الإسلامية",
+    heroSub:"تدريس العلوم الحديثة في ضوء القرآن والسنة، مع خدمات البحث والإفتاء المخصصة لتطوير الطلاب علمياً وأخلاقياً.",
+    yearsLabel:"سنوات من الخدمة", welcomeEyebrow:"مرحباً بكم في النور", welcomeTitle:"بناء الشخصية من خلال العلم",
+    welcomeBody:"تجمع جامعة النور الإسلامية بين تعاليم القرآن والسنة الخالدة والتخصصات الأكاديمية المعاصرة.",
+    missionTitle:"رسالتنا", missionBody:"تقديم تعليم أكاديمي رصين قائم على الشريعة يُخرّج علماء ومهنيين ذوي مبادئ.",
+    visionTitle:"رؤيتنا", visionBody:"أن نكون مؤسسة رائدة معترفاً بها عالمياً في التميز العلمي الإسلامي والحديث.", readMore:"اقرأ المزيد",
+    fatwaEyebrow:"دار إفتاء النور", fatwaTitle:"أسئلتكم، إجابات موثوقة", fatwaSub:"إجابات مكتوبة لمسائل شرعية يومية بإشراف مفتين مؤهلين.",
+    tabNew:"أسئلة جديدة", tabSelected:"أسئلة مختارة",
+    prayerEyebrow:"مواقيت الصلاة", editorialsEyebrow:"افتتاحيات", editorialsTitle:"بصائر وعبر",
+    magazineEyebrow:"مجلة علمية", magazineTitle:"مجلة النور الشهرية", magazineBody:"مجلة علمية شهرية تتضمن تعاليم القرآن والسنة وأبحاثاً في القضايا المعاصرة.", viewArchive:"عرض أرشيف المجلة",
+    booksEyebrow:"إصدارات", booksTitle:"الكتب", booksSub:"كتب علمية وإصلاحية مفيدة متاحة مجاناً بصيغة PDF.",
+    deptEyebrow:"الأكاديميا", deptTitle:"الأقسام المميزة", viewAllDept:"عرض جميع الأقسام",
+    papersEyebrow:"الأبحاث", papersTitle:"المقالات",
+    scholarsEyebrow:"أساتذة متميزون", scholarsTitle:"علماؤنا",
+    appEyebrow:"التطبيق", appTitle:"تطبيق النور للجوال", appBody:"دار الإفتاء ومواقيت الصلاة ومجلة النور على هاتفك أينما كنت.",
+    donateTitle:"ادعم الجيل القادم من العلماء", donateBody:"تبرعكم يمول المنح الدراسية وموارد المكتبة والأبحاث.", donateBtn:"تبرّع الآن",
+    newsletterTitle:"ابق على اطلاع", newsletterBody:"اشترك لتصلك الأخبار وتحديثات القبول والفعاليات.", subscribe:"اشترك", subscribeThanks:"شكراً — يرجى تفقد بريدك الإلكتروني.", emailPlaceholder:"أدخل بريدك الإلكتروني",
+    footerAbout:"مؤسسة مرموقة تجمع بين العلوم الإسلامية والمعاصرة، مكرسة لتكوين قادة مبدئيين وعلماء.",
+    siteMap:"خريطة الموقع", departmentsLabel:"الأقسام", address:"طريق رينغ، مدينة الجامعة، بيشاور، خيبر بختونخوا، باكستان",
+    copyright:"© 2026 جامعة النور الإسلامية. جميع الحقوق محفوظة.", privacy:"سياسة الخصوصية", terms:"الشروط",
+    readFull:"التفاصيل", clickToRead:"انقر للقراءة", prayerCity:"مواقيت الصلاة اليوم في بيشاور"
+  }
+};
+
+let currentLang = 'ur';
+
+function applyStaticI18n() {
+  const t = dict[currentLang];
+  document.querySelectorAll('[data-i18n]').forEach(el => {
+    const key = el.getAttribute('data-i18n');
+    if (t[key]) el.textContent = t[key];
+  });
+  document.querySelectorAll('[data-i18n-placeholder]').forEach(el => {
+    const key = el.getAttribute('data-i18n-placeholder');
+    if (t[key]) el.setAttribute('placeholder', t[key]);
+  });
+}
+
+function setLang(lang) {
+  currentLang = lang;
+  const body = document.body;
+  body.classList.remove('lang-ur','lang-en','lang-ar');
+  body.classList.add('lang-' + lang);
+  document.documentElement.lang = lang;
+  document.documentElement.dir = (lang === 'en') ? 'ltr' : 'rtl';
+  document.querySelectorAll('[data-langbtn]').forEach(b => {
+    b.classList.toggle('bg-gold', b.getAttribute('data-langbtn') === lang);
+    b.classList.toggle('text-primary-dark', b.getAttribute('data-langbtn') === lang);
+  });
+  applyStaticI18n();
+  renderFeatured(); renderFatwa(); renderPrayer(); renderEditorials();
+  renderArticles(); renderBooks(); renderDepartments(); renderPapers();
+  renderScholars(); renderStats();
+  lucide.createIcons();
+}
+
+/* =================== DYNAMIC CONTENT (bilingual data) =================== */
+const featured = [
+  { icon:"book-user", img:"https://images.unsplash.com/photo-1523240795612-9a054b0db644?q=80&w=500&auto=format&fit=crop",
+    ur:{t:"پیغام بانی جامعہ", d:"جامعہ کے قیام کا پس منظر اور مقصد"}, en:{t:"Founder's Message", d:"The background and purpose behind the university's founding"}, ar:{t:"كلمة المؤسس", d:"خلفية تأسيس الجامعة وهدفها"} },
+  { icon:"building-2", img:"https://images.unsplash.com/photo-1541339907198-e08756dedf3f?q=80&w=500&auto=format&fit=crop",
+    ur:{t:"تعارف جامعہ", d:"جامعہ اور شعبہ جات ایک نظر میں"}, en:{t:"University Profile", d:"The university and its departments at a glance"}, ar:{t:"نبذة عن الجامعة", d:"الجامعة وأقسامها في لمحة"} },
+  { icon:"scroll-text", img:"https://images.unsplash.com/photo-1584286595398-a59511e1eb84?q=80&w=500&auto=format&fit=crop",
+    ur:{t:"دارالافتاء", d:"آپ کے دینی مسائل کا مستند حل"}, en:{t:"Fatwa Center", d:"Reliable answers to your religious questions"}, ar:{t:"دار الإفتاء", d:"حلول موثوقة لمسائلكم الدينية"} },
+  { icon:"book-open", img:"https://images.unsplash.com/photo-1521587760476-6c12a4b040da?q=80&w=500&auto=format&fit=crop",
+    ur:{t:"ماہنامہ النور", d:"علم و تحقیق کا امین مجلہ"}, en:{t:"Al-Noor Journal", d:"A monthly journal devoted to scholarship and research"}, ar:{t:"مجلة النور", d:"مجلة شهرية للعلم والبحث"} },
+  { icon:"library", img:"https://images.unsplash.com/photo-1481627834876-b7833e8f5570?q=80&w=500&auto=format&fit=crop",
+    ur:{t:"کتابیں", d:"مفید علمی و اصلاحی کتابیں"}, en:{t:"Books", d:"Beneficial scholarly and reformative books"}, ar:{t:"الكتب", d:"كتب علمية وإصلاحية مفيدة"} },
+  { icon:"phone-call", img:"https://images.unsplash.com/photo-1497633762265-9d179a990aa6?q=80&w=500&auto=format&fit=crop",
+    ur:{t:"رابطہ", d:"برائے رہنمائی و معلومات"}, en:{t:"Contact", d:"For guidance and information"}, ar:{t:"اتصل بنا", d:"للإرشاد والمعلومات"} },
+];
+function renderFeatured(){
+  document.getElementById('featuredGrid').innerHTML = featured.map(f => `
+    <a href="#" class="card overflow-hidden group flex flex-col">
+      <div class="relative h-40 overflow-hidden">
+        <img src="${f.img}" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" alt=""/>
+        <div class="absolute inset-0 bg-gradient-to-t from-primary-dark/70 to-transparent"></div>
+        <span class="absolute bottom-3 start-3 flex h-9 w-9 items-center justify-center rounded-full bg-gold text-primary-dark"><i data-lucide="${f.icon}" class="w-[18px] h-[18px]"></i></span>
+      </div>
+      <div class="p-5">
+        <h3 class="font-display text-lg font-semibold text-primary-dark">${f[currentLang].t}</h3>
+        <p class="mt-1.5 text-sm text-ink/65">${f[currentLang].d}</p>
+      </div>
+    </a>
+  `).join('');
+  lucide.createIcons();
+}
+
+const fatwaNew = [
+  { date:"15-07-2026", ur:{t:"تراویح کے دوران موبائل دیکھنے کا حکم", s:"نماز تراویح میں دورانِ قیام موبائل پر پیغامات دیکھنے کی شرعی حیثیت کیا ہے؟"}, en:{t:"Checking phone during Taraweeh", s:"What is the ruling on checking phone messages while standing in Taraweeh prayer?"} },
+  { date:"12-07-2026", ur:{t:"آن لائن خرید و فروخت میں بیعانہ", s:"آن لائن سودے میں بیعانہ (ایڈوانس رقم) رکھنے کا شرعی حکم کیا ہے؟"}, en:{t:"Advance payments in online sales", s:"What is the ruling on taking an advance deposit in an online transaction?"} },
+  { date:"08-07-2026", ur:{t:"زکوٰۃ کی رقم تعلیمی وظیفے میں دینا", s:"کیا زکوٰۃ کی رقم مستحق طالب علم کو تعلیمی وظیفے کے طور پر دی جا سکتی ہے؟"}, en:{t:"Zakat funds as scholarships", s:"Can Zakat money be given to a deserving student as an educational scholarship?"} },
+  { date:"30-06-2026", ur:{t:"قضا نمازوں کی ترتیب کا مسئلہ", s:"متعدد قضا نمازیں ادا کرتے وقت ترتیب کا خیال رکھنا ضروری ہے یا نہیں؟"}, en:{t:"Order of missed prayers", s:"Is it necessary to maintain sequence when making up several missed prayers?"} },
+];
+const fatwaSelected = [
+  { date:"25-06-2026", ur:{t:"جمعہ کے خطبہ کے دوران موبائل بند رکھنا", s:"خطبہ جمعہ کے دوران موبائل خاموش یا بند رکھنے کا حکم کیا ہے؟"}, en:{t:"Phones during Friday sermon", s:"What is the ruling on keeping the phone silent or off during the Friday sermon?"} },
+  { date:"20-06-2026", ur:{t:"عمرہ کی نیت سے سفر میں احرام", s:"عمرہ کی نیت سے سفر کرنے والا میقات پر احرام کب باندھے؟"}, en:{t:"Ihram when travelling for Umrah", s:"When should a traveller intending Umrah put on Ihram at the Miqat?"} },
+  { date:"02-05-2026", ur:{t:"دورانِ سفر روزہ توڑنے کی رخصت", s:"سفر کی کتنی مسافت پر روزہ توڑنے کی رخصت حاصل ہوتی ہے؟"}, en:{t:"Concession to break the fast while travelling", s:"At what distance of travel does the concession to break the fast apply?"} },
+  { date:"14-04-2026", ur:{t:"بینک ملازمت کا شرعی حکم", s:"روایتی بینک میں غیر سودی شعبے میں ملازمت کرنے کا کیا حکم ہے؟"}, en:{t:"Working in a conventional bank", s:"What is the ruling on working in a non-interest-based department of a conventional bank?"} },
+];
+let fatwaTab = 'new';
+function setFatwaTab(tab){ fatwaTab = tab; document.querySelectorAll('.tab-btn').forEach(b=>b.classList.toggle('active', b.dataset.tab===tab)); renderFatwa(); }
+function renderFatwa(){
+  const list = fatwaTab === 'new' ? fatwaNew : fatwaSelected;
+  document.getElementById('fatwaList').innerHTML = list.map(q => `
+    <a href="#" class="card p-5 flex flex-col gap-2">
+      <span class="flex items-center gap-1.5 text-xs font-medium text-gold-dark"><i data-lucide="calendar-days" class="w-[13px] h-[13px]"></i>${q.date}</span>
+      <h3 class="font-display text-lg font-semibold text-primary-dark">${q[currentLang]?q[currentLang].t:q.en.t}</h3>
+      <p class="text-sm text-ink/65">${q[currentLang]?q[currentLang].s:q.en.s}</p>
+      <span class="mt-1 text-sm font-semibold text-primary">${dict[currentLang].readFull} &larr;</span>
+    </a>
+  `).join('');
+  lucide.createIcons();
+}
+
+const prayerTimes = [
+  { key:"fajr", ur:"فجر", en:"Fajr", ar:"الفجر", time:"04:26" },
+  { key:"sunrise", ur:"طلوع", en:"Sunrise", ar:"الشروق", time:"05:53" },
+  { key:"zuhr", ur:"ظہر", en:"Zuhr", ar:"الظهر", time:"12:38" },
+  { key:"asr", ur:"عصر", en:"Asr", ar:"العصر", time:"17:19" },
+  { key:"maghrib", ur:"مغرب", en:"Maghrib", ar:"المغرب", time:"19:23" },
+  { key:"isha", ur:"عشاء", en:"Isha", ar:"العشاء", time:"20:49" },
+];
+function renderPrayer(){
+  document.getElementById('prayerCityLine').textContent = dict[currentLang].prayerCity;
+  document.getElementById('prayerGrid').innerHTML = prayerTimes.map(p => `
+    <div class="prayer-slot rounded-2xl border border-white/15 bg-white/5 py-4">
+      <p class="text-xs uppercase tracking-wide text-white/70">${p[currentLang]}</p>
+      <p class="mt-2 font-display text-2xl font-semibold">${p.time}</p>
+    </div>
+  `).join('');
+}
+
+const editorials = [
+  { img:"https://images.unsplash.com/photo-1509062522246-3755977927d7?q=80&w=600&auto=format&fit=crop",
+    ur:{t:"علم اور اخلاق کا امتزاج", d:"عصرِ حاضر میں دینی تعلیم کی اہمیت اور اس کے تقاضے۔"},
+    en:{t:"The Union of Knowledge and Character", d:"The importance of religious education in the modern age, and what it demands."} },
+  { img:"https://images.unsplash.com/photo-1522202176988-66273c2fd55f?q=80&w=600&auto=format&fit=crop",
+    ur:{t:"طلبہ کی تربیت میں اساتذہ کا کردار", d:"استاد کی شخصیت طالب علم کی زندگی پر کس طرح اثر انداز ہوتی ہے۔"},
+    en:{t:"The Teacher's Role in Shaping Students", d:"How a teacher's character leaves a lasting mark on a student's life."} },
+  { img:"https://images.unsplash.com/photo-1532094349884-543bc11b234d?q=80&w=600&auto=format&fit=crop",
+    ur:{t:"جدید سائنس اور اسلامی اقدار کا امتزاج", d:"دینی اقدار کو برقرار رکھتے ہوئے جدید علوم سے استفادہ کیسے ممکن ہے۔"},
+    en:{t:"Modern Science and Islamic Values", d:"How to benefit from modern knowledge while upholding religious values."} },
+];
+function renderEditorials(){
+  document.getElementById('editorialsGrid').innerHTML = editorials.map(e => `
+    <a href="#" class="card overflow-hidden group">
+      <div class="relative h-44 overflow-hidden">
+        <img src="${e.img}" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" alt=""/>
+      </div>
+      <div class="p-5">
+        <h3 class="font-display text-lg font-semibold text-primary-dark">${e[currentLang].t}</h3>
+        <p class="mt-1.5 text-sm text-ink/65">${e[currentLang].d}</p>
+        <span class="mt-3 inline-block text-sm font-semibold text-gold-dark">${dict[currentLang].readFull} &larr;</span>
+      </div>
+    </a>
+  `).join('');
+}
+
+const articles = [
+  { ur:"اسلامی معاشیات: بنیادی اصول", en:"Islamic Economics: Core Principles" },
+  { ur:"سیرت النبی ﷺ سے تربیتِ اولاد", en:"Raising Children: Lessons from the Seerah" },
+  { ur:"سائنس میں مسلمانوں کا حصہ", en:"Muslim Contributions to Science" },
+];
+function renderArticles(){
+  document.getElementById('articlesGrid').innerHTML = articles.map(a => `
+    <a href="#" class="rounded-xl border border-black/5 bg-white p-4 hover:shadow-soft transition">
+      <p class="text-sm font-semibold text-primary-dark">${a[currentLang]}</p>
+      <span class="mt-2 inline-block text-xs font-semibold text-gold-dark">${dict[currentLang].clickToRead}</span>
+    </a>
+  `).join('');
+}
+
+const books = [
+  { img:"https://images.unsplash.com/photo-1544716278-ca5e3f4abd8c?q=80&w=500&auto=format&fit=crop", ur:"تعارف جامعہ (دلیل الجامعہ)", en:"University Profile (Daleel al-Jamia)" },
+  { img:"https://images.unsplash.com/photo-1512820790803-83ca734da794?q=80&w=500&auto=format&fit=crop", ur:"زکوٰۃ کے احکام و مسائل", en:"Rulings and Issues of Zakat" },
+  { img:"https://images.unsplash.com/photo-1481627834876-b7833e8f5570?q=80&w=500&auto=format&fit=crop", ur:"سیرت النبی ﷺ کے تربیتی پہلو", en:"Character-Building Aspects of the Seerah" },
+];
+function renderBooks(){
+  document.getElementById('booksGrid').innerHTML = books.map(b => `
+    <a href="#" class="card overflow-hidden group">
+      <div class="relative h-56 overflow-hidden"><img src="${b.img}" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" alt=""/></div>
+      <div class="p-5 text-center">
+        <h3 class="font-display text-lg font-semibold text-primary-dark">${b[currentLang]}</h3>
+        <span class="mt-3 inline-block text-sm font-semibold text-primary">${dict[currentLang].clickToRead}</span>
+      </div>
+    </a>
+  `).join('');
+}
+
+const departments = [
+  { img:"https://images.unsplash.com/photo-1609599006353-e629aaabfeae?q=80&w=600&auto=format&fit=crop", ur:{t:"اسلامیات", d:"قرآن، حدیث، فقہ اور عقیدہ کی تعلیم مستند اساتذہ کے زیرِ سایہ۔"}, en:{t:"Islamic Studies", d:"Quran, Hadith, Fiqh and Aqeedah under qualified scholars."} },
+  { img:"https://images.unsplash.com/photo-1584286595398-a59511e1eb84?q=80&w=600&auto=format&fit=crop", ur:{t:"عربی زبان", d:"کلاسیکی اور جدید عربی لسانیات اور ادب۔"}, en:{t:"Arabic Language", d:"Classical and modern Arabic linguistics and literature."} },
+  { img:"https://images.unsplash.com/photo-1521587760476-6c12a4b040da?q=80&w=600&auto=format&fit=crop", ur:{t:"شریعہ و قانون", d:"اسلامی فقہ کے ساتھ تقابلی قانونی مطالعہ۔"}, en:{t:"Sharia & Law", d:"Islamic jurisprudence alongside comparative legal studies."} },
+  { img:"https://images.unsplash.com/photo-1518770660439-4636190af475?q=80&w=600&auto=format&fit=crop", ur:{t:"کمپیوٹر سائنس", d:"سافٹ ویئر، مصنوعی ذہانت اور ڈیٹا سسٹمز۔"}, en:{t:"Computer Science", d:"Software engineering, AI and data systems."} },
+];
+function renderDepartments(){
+  document.getElementById('departmentsGrid').innerHTML = departments.map(d => `
+    <div class="card overflow-hidden group">
+      <div class="relative h-44 overflow-hidden">
+        <img src="${d.img}" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" alt=""/>
+        <div class="absolute inset-0 bg-gradient-to-t from-primary-dark/60 to-transparent"></div>
+      </div>
+      <div class="p-5">
+        <h3 class="font-display text-lg font-semibold text-primary-dark">${d[currentLang].t}</h3>
+        <p class="mt-1.5 text-sm text-ink/65">${d[currentLang].d}</p>
+        <a href="#" class="mt-4 inline-block text-sm font-semibold text-gold-dark hover:text-primary">${dict[currentLang].readMore} &larr;</a>
+      </div>
+    </div>
+  `).join('');
+}
+
+const papers = [
+  { date:"10-07-2026", ur:"مسجد اقصیٰ اور فلسطین: دردمندانہ گزارشات", en:"Al-Aqsa Mosque and Palestine: A Heartfelt Appeal" },
+  { date:"28-06-2026", ur:"عالمی امن میں اسلامی تعلیمات کا کردار", en:"The Role of Islamic Teachings in Global Peace" },
+  { date:"15-06-2026", ur:"طلبہ میں تحقیقی ذوق پیدا کرنے کے طریقے", en:"Cultivating a Research Mindset Among Students" },
+];
+function renderPapers(){
+  document.getElementById('papersList').innerHTML = papers.map(p => `
+    <a href="#" class="card p-5 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3">
+      <div>
+        <h3 class="font-display text-lg font-semibold text-primary-dark">${p[currentLang]}</h3>
+        <span class="mt-1 flex items-center gap-1.5 text-xs text-ink/55"><i data-lucide="calendar-days" class="w-[13px] h-[13px]"></i>${p.date}</span>
+      </div>
+      <span class="btn-primary !px-5 !py-2 text-xs shrink-0">${dict[currentLang].clickToRead}</span>
+    </a>
+  `).join('');
+  lucide.createIcons();
+}
+
+const scholars = [
+  { img:"https://images.unsplash.com/photo-1633332755192-727a05c4013d?q=80&w=400&auto=format&fit=crop", ur:{n:"ڈاکٹر محمد ادریس", d:"ڈین، شعبہ اسلامیات", q:"پی ایچ ڈی اسلامی فقہ، جامعہ الازہر"}, en:{n:"Dr. Muhammad Idrees", d:"Dean, Islamic Studies", q:"PhD Islamic Jurisprudence, Al-Azhar University"} },
+  { img:"https://images.unsplash.com/photo-1580489944761-15a19d654956?q=80&w=400&auto=format&fit=crop", ur:{n:"ڈاکٹر عائشہ رحمٰن", d:"سربراہ، شعبہ عربی", q:"پی ایچ ڈی عربی لسانیات، ام القریٰ یونیورسٹی"}, en:{n:"Dr. Aisha Rahman", d:"Head, Arabic Language", q:"PhD Arabic Linguistics, Umm Al-Qura University"} },
+  { img:"https://images.unsplash.com/photo-1560250097-0b93528c311a?q=80&w=400&auto=format&fit=crop", ur:{n:"مفتی عبدالستار", d:"چیف مفتی و مشیرِ افتاء", q:"تخصص فی الافتاء، جامعہ دارالعلوم"}, en:{n:"Mufti Abdul Sattar", d:"Chief Mufti & Fatwa Advisor", q:"Takhassus fil-Ifta, Jamia Darul Uloom"} },
+  { img:"https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?q=80&w=400&auto=format&fit=crop", ur:{n:"ڈاکٹر حنا فاروق", d:"سربراہ، شعبہ تعلیم", q:"پی ایچ ڈی تعلیم، جامعہ پشاور"}, en:{n:"Dr. Hina Farooq", d:"Head, Education Department", q:"PhD Education, University of Peshawar"} },
+];
+function renderScholars(){
+  document.getElementById('scholarsGrid').innerHTML = scholars.map(s => `
+    <div class="card overflow-hidden text-center">
+      <div class="relative h-56 w-full"><img src="${s.img}" class="w-full h-full object-cover" alt=""/></div>
+      <div class="p-5">
+        <h3 class="font-display text-lg font-semibold text-primary-dark">${s[currentLang].n}</h3>
+        <p class="mt-1 text-sm font-medium text-gold-dark">${s[currentLang].d}</p>
+        <p class="mt-1.5 text-xs text-ink/60">${s[currentLang].q}</p>
+      </div>
+    </div>
+  `).join('');
+}
+
+const stats = [
+  { icon:"users", value:12500, ur:"طلبہ", en:"Students" },
+  { icon:"graduation-cap", value:340, ur:"اساتذہ", en:"Faculty" },
+  { icon:"building-2", value:8, ur:"شعبہ جات", en:"Departments" },
+  { icon:"book-open", value:52000, ur:"کتب لائبریری", en:"Library Books" },
+  { icon:"award", value:21000, ur:"فارغ التحصیل", en:"Graduates" },
+  { icon:"file-text", value:1850, ur:"تحقیقی مقالات", en:"Research Papers" },
+];
+let countersStarted = false;
+function renderStats(){
+  document.getElementById('statsGrid').innerHTML = stats.map((s,i) => `
+    <div class="text-center">
+      <i data-lucide="${s.icon}" class="mx-auto text-gold-light w-[26px] h-[26px]"></i>
+      <p class="mt-3 font-display text-3xl sm:text-4xl font-semibold"><span id="counter-${i}">0</span>+</p>
+      <p class="mt-1 text-xs uppercase tracking-wide text-white/70">${currentLang==='en'?s.en:s.ur}</p>
+    </div>
+  `).join('');
+  lucide.createIcons();
+  countersStarted = false;
+  checkCounters();
+}
+function animateCounter(el, target) {
+  const duration = 1600, start = performance.now();
+  function tick(now) {
+    const progress = Math.min((now - start) / duration, 1);
+    const eased = 1 - Math.pow(1 - progress, 3);
+    el.textContent = Math.floor(eased * target).toLocaleString();
+    if (progress < 1) requestAnimationFrame(tick);
+  }
+  requestAnimationFrame(tick);
+}
+function checkCounters() {
+  if (countersStarted) return;
+  const grid = document.getElementById('statsGrid');
+  if (!grid) return;
+  const rect = grid.getBoundingClientRect();
+  if (rect.top < window.innerHeight * 0.85) {
+    countersStarted = true;
+    stats.forEach((s, i) => { const el=document.getElementById('counter-'+i); if(el) animateCounter(el, s.value); });
+  }
+}
+window.addEventListener('scroll', checkCounters);
+
+/* ---------- Date strip ---------- */
+function renderGregDate(){
+  const now = new Date();
+  document.getElementById('gregDate').append(now.toLocaleDateString(currentLang==='ur'?'ur-PK':(currentLang==='ar'?'ar-SA':'en-GB'), { day:'numeric', month:'long', year:'numeric' }));
+}
+renderGregDate();
+
+/* ---------- Topbar hide on scroll ---------- */
+const topbar = document.getElementById('topbar');
+window.addEventListener('scroll', () => {
+  if (window.scrollY > 8) { topbar.classList.add('max-h-0','opacity-0','overflow-hidden'); }
+  else { topbar.classList.remove('max-h-0','opacity-0','overflow-hidden'); }
+});
+
+/* ---------- Mobile menu ---------- */
+document.getElementById('mobileBtn').addEventListener('click', () => document.getElementById('mobileMenu').classList.remove('hidden'));
+document.getElementById('mobileClose').addEventListener('click', () => document.getElementById('mobileMenu').classList.add('hidden'));
+document.querySelectorAll('#mobileMenu a').forEach(a => a.addEventListener('click', () => document.getElementById('mobileMenu').classList.add('hidden')));
+
+/* ---------- Scroll reveal ---------- */
+const revealEls = document.querySelectorAll('[data-reveal]');
+const io = new IntersectionObserver((entries) => {
+  entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('in-view'); });
+}, { threshold: 0.15 });
+revealEls.forEach(el => io.observe(el));
+
+/* ---------- Init ---------- */
+setLang('ur');
+</script>
+</body>
+</html>
